@@ -4,9 +4,9 @@ import SideMenu from './sideMenu'
 import DashboardNav from './dashboardNav'
 
 export default function DashboardLayout({ children }) {
-    return <div className={styles.container}>
+    return <div className={styles.mainContainer}>
       <SideMenu></SideMenu>
-      <main>
+      <main className={styles.main}>
         <DashboardNav></DashboardNav>
       {children}
       </main>
