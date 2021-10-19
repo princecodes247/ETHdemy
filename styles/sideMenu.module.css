@@ -16,10 +16,10 @@
 .menuContainer:hover {
     min-width: 16em;
     background: var(--secondary-accent);
-    flex: 10;
+    /* flex: 10; */
 }
 
-.menuContainer:hover .menu__item.active::before, .menuContainer:hover .menu__item.active::after {
+.menuContainer:hover .menu__item_active::before, .menuContainer:hover .menu__item_active::after {
     
     background: var(--secondary-accent);
 }
@@ -46,11 +46,14 @@
     padding: 1px;
     display: block;
     position: relative;
-    width: 100%;
-    position: relative;
     list-style: none;
     border-radius: 20px 0 0 20px;
     transition: 200ms;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
 }
 
 .menu__item:hover {
@@ -59,10 +62,10 @@
 
 
 
-.menu__item.active {
+.menu__item_active, .menu__item_active:hover {
     background-color: var(--primary-accent);
 }
-.menu__item.active::before, .menu__item.active::after {
+.menu__item_active::before, .menu__item_active::after {
     content: "";
     position: absolute;
     right: 8px;
@@ -72,23 +75,16 @@
     border-radius: 30px;
     transition: 400ms;
 }
-.menu__item.active::before {
+.menu__item_active::before {
     top: -30px;
     box-shadow: 10px 10px 0 var(--primary-accent);
 }
-.menu__item.active::after {
+.menu__item_active::after {
 
     bottom: -30px;
     box-shadow: 10px -10px 0 var(--primary-accent);
 }
-.menu__item a {
-    position: relative;
-    display: block;
-    width: 100%;
-    display: flex;
-    text-decoration: none;
-    color: #fff;
-}
+
 
 .menu__icon {
     position: relative;

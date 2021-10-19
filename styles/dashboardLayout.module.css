@@ -1,6 +1,133 @@
-.container {
-    max-width: 36rem;
-    padding: 0 1rem;
-    margin: 3rem auto 6rem;
-  }
+.mainContainer {
+  display: flex;
+  font-family: Nunito, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text_color--default);
+  /* width: 100vw;
+  overflow: hidden; */
+}
+
+.dashboardNav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--tertiary-bg);
+  height: 10vh;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.profile {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.profile__pic {
+  background-color: green;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 2;
+  min-height: 100vh;
+  /* background-color: red; */
+}
+
+.sect {
+  padding: 20px 4em;
   
+}
+
+.sect_income_summary {
+  /* flex: 8; */
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+  text-align: center;
+}
+
+.sect_income_summary h3 {
+  align-self: flex-start;
+}
+.summary {
+  width: 80%;
+  margin: 10%;
+  margin-top: 30px;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2% 5%;
+}
+
+.summary__details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary__balance .big{
+  font-size: 4em;
+}
+
+.sect_analytics {
+  /* flex: 8; */
+  /* height: 30%; */
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.asset_list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 50px;
+  /* background-color: rgb(41, 139, 41); */
+  /* list-style: decimal;
+  list-style-position: inside; */
+
+  
+}
+
+.asset {
+  padding: 10px 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 200ms;
+  border-bottom: 1px solid var(--secondary-accent);
+}
+
+.asset:hover {
+ background-color: rgba(100, 100, 100, 0.1);
+}
+
+.asset__icon {
+ width: 20px;
+ height: 20px;
+ background-color: red;
+}
+
+.asset::before {
+  position: absolute;
+  left: -6%;
+  content: "1";
+}
+
+.graph {
+  height: 20em;
+  width: 25em;
+  background-color: var(--secondary-bg);
+}
