@@ -51,15 +51,17 @@
 import styles from '../styles/sideMenu.module.css'
 import SideMenuItem from './sideMenuItem'
 
+  
 export default function SideMenu({ children }) {
+ 
     return <aside className={styles.menuContainer}>
             <ul className={styles.menu}>
-              <SideMenuItem name="Dashboard" icon="wallet"></SideMenuItem>
-              <SideMenuItem name="Market" icon="wallet"></SideMenuItem>
-              <SideMenuItem name="Deposit/Withdraw" icon="wallet"></SideMenuItem>
-              <SideMenuItem name="Transaction History" icon="wallet"></SideMenuItem>
-              <SideMenuItem name="Add Accounts" icon="wallet"></SideMenuItem>
-              <SideMenuItem name="Settings" icon="wallet"></SideMenuItem>
+              <SideMenuItem name="Dashboard" desc="Dashboard" icon="wallet" active = "true"></SideMenuItem>
+              <SideMenuItem name="Market" desc="Market" icon="wallet"></SideMenuItem>
+              <SideMenuItem name="funds" desc="Deposit/Withdraw" icon="wallet"></SideMenuItem>
+              <SideMenuItem name="History" desc="Transaction History" icon="wallet"></SideMenuItem>
+              <SideMenuItem name="Accounts" desc="Add Accounts" icon="wallet"></SideMenuItem>
+              <SideMenuItem name="Settings" desc="Settings" icon="wallet"></SideMenuItem>
             {children}
             </ul>
         </aside>
