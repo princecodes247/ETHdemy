@@ -1,0 +1,67 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+/* @font-face {
+    font-family: Nunito;
+    src: url("../fonts/Nunito-Regular.ttf");
+} */
+
+
+body {
+    /* display: flex; */
+}
+
+:root {
+    
+    --blue-1: hsl(217, 28%, 15%);
+    --blue-2: hsl(216, 73%, 18%);
+    --blue-3: hsl(216, 53%, 9%);
+    --blue-4: #181f2a;
+    --blue-5: hsl(219, 30%, 9%);
+    --blue-6: hsl(219, 30%, 18%);
+    --blue-7: hsl(198, 60%, 50%);
+    --blue-8: hsl(216, 93%, 28%);
+    --blue-9: #151C25;
+    --blue-10: #354153;
+    --gold-1: hsl(42, 100%, 50%);
+
+    --cyan: hsl(176, 68%, 64%);
+    --red: hsl(0, 100%, 63%);
+
+    --primary-bg: var(--blue-9);
+    --secondary-bg: var(--blue-1);
+    --tertiary-bg: var(--blue-3);
+    
+    --primary-accent: var(--gold-1);
+    --secondary-accent: var(--blue-3);
+    --tertiary-accent: var(--blue-2);
+
+    --materialize--primary-accent: var(--blue-7);
+
+    --text_color--default: white;
+    --text_size--default: 14px;
+
+
+    --header-bg: var(--blue-10);
+
+    --view_width--mobile: 375px;
+    --view_width--desktop: 1440px;
+}
+
+body {
+    /* display: flex; */
+    font-family: Nunito, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text_color--default);
+    /* width: 100vw;
+    overflow: hidden; */
+}
+
+.text--sub {
+    color: #ccc;
+    font-style: italic;
+}
