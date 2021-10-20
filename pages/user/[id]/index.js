@@ -2,6 +2,8 @@ import Link from 'next/link'
 import Head from 'next/head'
 import DashboardLayout from '../../../components/dashboardLayout'
 import DashboardSection from '../../../components/dashboardSection'
+import DashboardBalanceSection from '../../../components/dashboardBalanceSection'
+import DashboardGraphSection from '../../../components/dashboardGraphSection'
 
 import { useRouter } from 'next/router'
   
@@ -16,28 +18,13 @@ export default function Dashboard() {
       <Head>
         <title>Dashboard</title>
       </Head>
-      <h1>First </h1>
-      <DashboardSection name="Wallet Details">
-          <div className="summary">
-               <div className="summary__details">
-                <p>Investments: $1399</p>
-                <p>Today{`'`}s Profit: $1399</p>
-               </div>
-                <div className="summary__balance">
-                    <p>Your Balance is </p>
-                    <p className="big">$140</p>
-                </div>
-            </div>
-      </DashboardSection>
-      <DashboardSection name="">
-          <div className="graph">
-               
-            </div>
-      </DashboardSection>
+      <DashboardBalanceSection />
+      <DashboardGraphSection></DashboardGraphSection>
       <DashboardSection name="Top 10 Ranking">
-          
-          
 
+      </DashboardSection>
+      <DashboardSection name="Referral Link">
+        
       </DashboardSection>
       <h2>
         <Link href="/">
