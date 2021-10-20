@@ -1,11 +1,13 @@
+import styles from '../styles/dashboardLayout.module.css'
+
 import Link from 'next/link'
 
 export default function DashboardNav({ children }) {
-    return <header>
+    return <header className={styles.dashboardNav}>
     <Link href="" passHref>
-        <div className="profile">
-        <div className="profile__pic"></div>
-        <div className="profile__name">
+        <div className={styles.profile}>
+        <div className={styles.profile__pic}></div>
+        <div className={styles.profile__name}>
             <p>John Doe</p>
         </div>
         </div>
