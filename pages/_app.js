@@ -1,5 +1,5 @@
-import '../styles/general.css'
 import '../styles/globals.css'
+import '../styles/general.css'
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
