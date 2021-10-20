@@ -11,46 +11,6 @@
 } */
 
 
-body {
-    /* display: flex; */
-}
-
-:root {
-    
-    --blue-1: hsl(217, 28%, 15%);
-    --blue-2: hsl(216, 73%, 18%);
-    --blue-3: hsl(216, 53%, 9%);
-    --blue-4: #181f2a;
-    --blue-5: hsl(219, 30%, 9%);
-    --blue-6: hsl(219, 30%, 18%);
-    --blue-7: hsl(198, 60%, 50%);
-    --blue-8: hsl(216, 93%, 28%);
-    --blue-9: #151C25;
-    --blue-10: #354153;
-    --gold-1: hsl(42, 100%, 50%);
-
-    --cyan: hsl(176, 68%, 64%);
-    --red: hsl(0, 100%, 63%);
-
-    --primary-bg: var(--blue-9);
-    --secondary-bg: var(--blue-1);
-    --tertiary-bg: var(--blue-3);
-    
-    --primary-accent: var(--gold-1);
-    --secondary-accent: var(--blue-3);
-    --tertiary-accent: var(--blue-2);
-
-    --materialize--primary-accent: var(--blue-7);
-
-    --text_color--default: white;
-    --text_size--default: 14px;
-
-
-    --header-bg: var(--blue-10);
-
-    --view_width--mobile: 375px;
-    --view_width--desktop: 1440px;
-}
 
 body {
     /* display: flex; */
@@ -60,8 +20,50 @@ body {
     /* width: 100vw;
     overflow: hidden; */
 }
+a {
+    color: inherit;
+    text-decoration: none;
+  }
 
 .text--sub {
     color: #ccc;
     font-style: italic;
+}
+
+
+
+/* HEADINGS */
+h1, h2, h3, h4, h5, h6 {
+font-weight: 400;
+line-height: 1.3;
+}
+h1 {
+font-size: 4.2rem;
+line-height: 110%;
+margin: 2.8rem 0 1.68rem 0;
+}
+h2 {
+font-size: 3.56rem;
+line-height: 110%;
+margin: 2.3733333333rem 0 1.424rem 0;
+}
+h3 {
+font-size: 2.92rem;
+line-height: 110%;
+margin: 1.9466666667rem 0 1.168rem 0;
+}
+h4 {
+font-size: 2.28rem;
+line-height: 110%;
+margin: 1.52rem 0 .912rem 0;
+}
+h5 {
+font-size: 1.64rem;
+line-height: 110%;
+margin: 1.0933333333rem 0 .656rem 0;
+}
+h6 {
+font-size: 1.15rem;
+line-height: 110%;
+margin: .7666666667rem 0 .46rem 0;
 }
