@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function DashboardNav({ children }) {
     return <header>
-    <Link href="" >
+    <Link href="" passHref>
         <div className="profile">
         <div className="profile__pic"></div>
         <div className="profile__name">
