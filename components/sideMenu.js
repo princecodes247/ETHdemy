@@ -52,8 +52,8 @@ import styles from '../styles/sideMenu.module.css'
 import SideMenuItem from './sideMenuItem'
 
   
-export default function SideMenu({ children }) {
-  let menuItems = [
+export default function SideMenu() {
+  const menuItems = [
     {
       name:"Dashboard",
       desc:"Dashboard",
@@ -65,10 +65,10 @@ export default function SideMenu({ children }) {
       icon: "wallet"
     },
     {
-    name: "funds", 
+    name: "Funds", 
     desc: "Deposit/Withdraw",
     icon: "wallet"
-  },
+    },
     {
       name: "History",
       desc: "Transaction History",
@@ -85,14 +85,14 @@ export default function SideMenu({ children }) {
       icon: "wallet"
     }
   ]
- 
+  
     return <aside className= {styles.menuContainer}>
             <ul className= {styles.menu}>
-             {menuItems.map(menuItem=>{
-              <SideMenuItem name={menuItem.name} desc={menuItem.desc} icon={menuItem.icon}></SideMenuItem>
-             })}
-           
-            {children}
+             { menuItems.map(menuItem=>{
+               let element = <SideMenuItem name={menuItem.name} desc={menuItem.desc} icon={menuItem.icon}/>
+                  return element
+            })}
+   
             </ul>
         </aside>
     
