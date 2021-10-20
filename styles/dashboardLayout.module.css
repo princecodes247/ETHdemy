@@ -54,7 +54,15 @@
   /* background-color: red; */
   text-align: center;
 }
-
+.sect_analytics {
+  /* flex: 8; */
+  /* height: 30%; */
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
 .sect_income_summary h3 {
   align-self: flex-start;
 }
@@ -74,7 +82,7 @@
   justify-content: space-between;
 }
 
-.summary__balance .big{
+.summary__balance_big{
   font-size: 4em;
 }
 
