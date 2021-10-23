@@ -36,3 +36,7 @@
   --view_width--mobile: 375px;
   --view_width--desktop: 1440px;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
