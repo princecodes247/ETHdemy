@@ -9,13 +9,108 @@
 }
 
 .main {
-  padding: 5rem 0;
+  padding: 0 0 5rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+
+
+.header {
+  /* position: fixed; */
+  position: sticky;
+  top: 0;
+  display: flex;
+  /* justify-content: flex-end; */
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  /* background-color: var(--tertiary-bg); */
+  /* background-color: #000; */
+  background-color: var(--header-bg);
+  height: 10vh;
+  width: 100%;
+  z-index: 99;
+  /* padding: 0 10px; */
+  padding: 0 5%;
+}
+.nav {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.nav_links {
+  gap: 20px;
+  display: flex;
+}
+
+
+
+.sect_hero {
+  /* background: url("../assets/images/backgrounds/blob-scene-1.svg") no-repeat;
+  background: url("../assets/images/backgrounds/stacked-waves-3.svg") no-repeat; */
+  background-size: 100%;
+  /* background-clip: content-box; */
+  /* background-attachment: fixed; */
+  background-position: bottom;
+  background-position-y: -50px;
+  height: 100vh;
+  min-height: 20em;
+}
+
+.partners__list {
+  display: flex;
+  gap: 10px;
+}
+
+.sect > .col{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__text .btn{
+  margin-top: 20px;
+}
+
+.partners {
+  margin-top: 30px;
+  align-self: flex-start;
+  /* background-color: red; */
+  width: 40em;
+}
+
+.partners__list {
+  margin-top: 30px;
+  /* background-color: red; */
+  padding: 10px;
+  height: 110px;
+}
+
+.partners__item {
+  min-width: 10px;
+  /* border: 1px solid red; */
+  /* background-color: #aaa1; */
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: grayscale(100%) contrast(0%) brightness(100%);
+}
+
+.partners__item img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+
+
 
 .footer {
   width: 100%;
