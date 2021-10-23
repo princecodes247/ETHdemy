@@ -14,7 +14,7 @@
 
 body {
     /* display: flex; */
-    font-family: Nunito, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "Inter";
     background-color: var(--primary-bg);
     color: var(--text_color--default);
     /* width: 100vw;
