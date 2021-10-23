@@ -40,8 +40,7 @@
 }
 
 .sect {
-  padding: 20px 4em;
-  
+  padding: 5px 1.4em;
 }
 
 .sect_income_summary {
@@ -97,6 +96,7 @@
 }
 
 .asset_list {
+  counter-reset: assets;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -109,6 +109,7 @@
 }
 
 .asset {
+  counter-increment: assets;
   padding: 10px 20px;
   position: relative;
   display: flex;
@@ -131,7 +132,7 @@
 .asset::before {
   position: absolute;
   left: -6%;
-  content: "1";
+  content: counter(assets);
 }
 
 .graph {
