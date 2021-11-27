@@ -2,25 +2,28 @@ import Link from 'next/link'
 import Head from 'next/head'
 import DashboardLayout from '../../../components/dashboardLayout'
 
+import DashboardOL from '../../../components/dashboardOl'
+
 import { useRouter } from 'next/router'
   
+import withAuth from "../../../HOC/withAuth";
 
-export default function History() {
+const History = () => {
+
   const router = useRouter()
   const url = router.asPath
 
 
   return (
-    <DashboardLayout>
+    <DashboardLayout className="justify-start">
       <Head>
-        <title>Dashboard</title>
+        <title>Dashboard: History</title>
       </Head>
-      <h1>History </h1>
-      <h2>
-        <Link href="/">
-          <a>Back to home</a>
-        </Link>
-      </h2>
+      <h1 className="m-0 ml-4 ">History </h1>
+      <DashboardOL listItems={["asd","sd"]}></DashboardOL>
+     
     </DashboardLayout>
   )
 }
+
+export default withAuth(History)

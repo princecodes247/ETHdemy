@@ -11,18 +11,40 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 10px;
+  grid-gap: 10px;
   background-color: var(--tertiary-bg);
   height: 10vh;
   width: 100%;
   padding: 0 10px;
 }
 
+
+
 .profile {
   display: flex;
   gap: 10px;
   align-items: center;
 }
+
+ @media only screen and  (max-width:667px) {
+    .profile {
+      display: none;
+      grid-gap: 10px;
+      align-items: center;
+    }
+    .btn--log_out {
+      display: none;
+    }
+    .menu_ham {
+      display: block;
+      height: 300px;
+      width: 300px;
+      padding: 10px;
+      background: #000;
+      border: 1px solid red;
+    }
+ }
+
 .profile__pic {
   background-color: green;
   height: 30px;
@@ -33,7 +55,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex: 2;
   min-height: 100vh;
   /* background-color: red; */
@@ -65,6 +87,12 @@
 .sect_income_summary h3 {
   align-self: flex-start;
 }
+@media only screen and  (max-width:667px) {
+    .sect_income_summary h3 {
+      align-self: center;
+    }
+ }
+
 .summary {
   width: 80%;
   margin: 10%;
@@ -139,4 +167,36 @@
   height: 20em;
   width: 25em;
   background-color: var(--secondary-bg);
+}
+
+
+/*COME BACK HERE AND IMPLEMENT GRID INSTEAD OF FLEX*/
+
+      .statRow {
+        display: flex;
+        flex-wrap: wrap;
+        grid-gap: 20px;
+        justify-content: space-evenly;
+      }
+    
+    .topCoins {
+      margin-top: 2rem;
+    }
+  
+@media only screen and (max-width: 600px) {
+ 
+    
+      .globalStat {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+        .statRow {
+
+          width: 100%;
+          flex-wrap: no-wrap;
+        }
+    
+  
 }

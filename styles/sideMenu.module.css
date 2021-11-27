@@ -5,14 +5,27 @@
     top: 0;
     left: 0;
     background-color: var(--secondary-bg);
-    width: 4em;
     min-width: 4em;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 400ms;
+
 }
+
+ @media only screen and  (max-width:667px) {
+    .menuContainer {
+        position: fixed;
+        overflow: hidden;
+        height: 0vh;
+        min-width: 100vw;
+    }
+    .menuContainer.open {
+        height: 100vh;
+    }
+ }
+
 .menuContainer:hover {
     min-width: 16em;
     background: var(--secondary-accent);
@@ -53,6 +66,7 @@
     display: flex;
     align-items: center;
     text-decoration: none;
+    white-space: nowrap;
     color: #fff;
 }
 

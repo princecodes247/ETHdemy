@@ -1,0 +1,141 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+}
+.coin-detail-container {
+  width: 80%;
+  overflow-y: scroll;
+  margin: auto;
+  height: 100vh;
+  color: #d2d2d2;
+  display: flex;
+  align-items: center;
+  .select-timeperiod {
+    margin: 1rem;
+  }
+  flex-direction: column;
+  .coin-price-and-change {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .coin-price {
+      font-weight: 400;
+      font-size: 2rem;
+      color: #fff;
+    }
+    .coin-change {
+      margin-left: 1.2rem;
+    }
+  }
+  .coin-heading-container {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+    img {
+      margin: 0.5rem;
+    }
+    h2 {
+      font-weight: 500;
+      font-size: 2rem;
+      margin-right: 0.5rem;
+    }
+    code {
+      font-size: 1.5rem;
+      color: #808080;
+    }
+  }
+  .stats-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .coin-value-stats {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 1rem;
+      .coin-stats {
+        display: flex;
+        font-weight: 300;
+        justify-content: space-between;
+        padding: 0.8rem;
+        background-color: rgba(151, 151, 151, 0.247);
+        margin: 0.3rem;
+        border-radius: 0.4rem;
+        align-items: center;
+        flex-direction: column;
+        h4 {
+          font-weight: 400;
+        }
+        .coin-stats-name {
+          display: flex;
+          align-items: center;
+          h4 {
+            margin-right: 0.4rem;
+          }
+        }
+        .stats {
+          display: flex;
+        }
+      }
+    }
+    .other-stats-info {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 1rem;
+      .coin-stats {
+        display: flex;
+        font-weight: 300;
+        justify-content: space-between;
+        padding: 0.8rem;
+        background-color: rgba(151, 151, 151, 0.247);
+
+        margin: 0.3rem;
+        border-radius: 0.4rem;
+        align-items: center;
+        flex-direction: column;
+        h4 {
+          font-weight: 400;
+        }
+        .coin-stats-name {
+          display: flex;
+          align-items: center;
+          h4 {
+            margin-right: 0.4rem;
+          }
+        }
+        .stats {
+          display: flex;
+        }
+      }
+    }
+  }
+  .coin-desc-link {
+    width: 80%;
+    margin: auto;
+    .coin-desc {
+      .coin-details-heading {
+        font-weight: 400;
+        color: #fff;
+      }
+    }
+    .coin-links {
+      .coin-links-heading {
+        font-weight: 400;
+        color: #fff;
+      }
+      margin: 1rem 0;
+      .coin-link {
+        display: flex;
+        width: 60%;
+        justify-content: space-between;
+        margin: 0.5rem 0;
+        background-color: rgba(151, 151, 151, 0.247);
+        margin: 0.4rem 0;
+        padding: 1rem 0.5rem;
+        border-radius: 0.4rem;
+      }
+    }
+  }
+}

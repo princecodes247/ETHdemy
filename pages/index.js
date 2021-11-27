@@ -8,30 +8,30 @@ export default function Home() {
   return (
 
       <main className={styles.main}>
-      <Head>
-        <title>Crypto</title>
-        <meta name="description" content="Crypto" />
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
-          rel="stylesheet"
-        />
-      </Head>
-      <header className={styles.header}>
-        <div className={styles.nav}>
-          <div className={styles.logo}>Grypto</div>
-          <ul className={styles.nav_links}>
-            <li className={styles.nav_link}>Home</li>
-            <li className={styles.nav_link}>Home</li>
-            <li className={styles.nav_link}>Home</li>
-          </ul>
-        </div>
-        <div className="cta_btns">
-          <button className="btn">Sign In</button>
-          <button className="btn">Sign Up</button>
-        </div>
-      </header>
-      <section className={styles.sect_hero}>
+        <Head>
+          <title>Crypto</title>
+          <meta name="description" content="Crypto" />
+          <link rel="icon" href="/favicon.ico" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
+            rel="stylesheet"
+          />
+        </Head>
+        <header className={styles.header}>
+          <div className={styles.nav}>
+            <div className="flex-1">Grypto</div>
+            <ul className={"gap-8 hidden md:flex"}>
+              <li className={styles.nav_link}>Home</li>
+              <li className={styles.nav_link}>Home</li>
+              <li className={styles.nav_link}>Home</li>
+            </ul>
+          </div>
+          <div className="cta_btns hidden md:flex gap-5">
+            <button className="btn">Sign In</button>
+            <button className="btn">Sign Up</button>
+          </div>
+        </header>
+      <section className={`${styles.sect_hero} mb-10`}>
         <div className={styles.col}>
           <div className={styles.hero__text}>
             <p className={styles.text_sub}>#1 INVESTMENT PLATFORM</p>
@@ -42,12 +42,16 @@ export default function Home() {
             </p>
             <button className="btn">Sign Up</button>
           </div>
-          <div className="partners">
+          <div className={styles.partners}>
             <p className={styles.text_sub}>Over 6,000+ trusted companies in the world</p>
             <div className="glide">
               <div className="glide__track" data-glide-el="track">
             <ul className={styles.partners__list}>
-             
+             {
+               <li className="partners__item glide__slide">
+               <Image src="/public/images/partners/1.svg" layout='fill' alt="ag" />
+             </li>
+             }
             </ul>
             </div>
            
@@ -58,7 +62,7 @@ export default function Home() {
           <img className="hero__img" src="./stuuf" alt="stuff" />
         </div>
       </section>
-      <section className="sect sect--why">
+      <section className={`${styles.sect_why} mb-10`}>
         <div className={styles.col}>
           <h2>Why Invest in Stocks and Cryptocurrency</h2>
           <p>
@@ -72,8 +76,8 @@ export default function Home() {
           <div className="bitcoin-calculator widget widget--small"></div>
         </div>
       </section>
-      <section className={styles.sect_features}>
-        <div className={styles.features_list}>
+      <section className="px-16 py-1 mb-10">
+        <div className="flex gap-12 flex-col md:flex-row">
           <div
             className="   wow fadeInUp animated"
             data-wow-delay="100ms"
@@ -83,7 +87,7 @@ export default function Home() {
               animationName: "fadeInUp" }}
           >
             <div className={widgetStyles.feature_card}>
-              <div className={widgetStyles.feature_card_icon}>
+              <div className={widgetStyles.feature_card_icon + " h-20 w-20 bg-black"}>
                 <i className="icon-lock"></i>
               </div>
               <div className={widgetStyles.feature_card_content}>
@@ -106,7 +110,7 @@ export default function Home() {
             
           >
             <div className={widgetStyles.feature_card}>
-              <div className={widgetStyles.feature_card_icon}>
+              <div className={widgetStyles.feature_card_icon + " h-20 w-20 bg-black"}>
                 <i className="icon-search"></i>
               </div>
               <div className={widgetStyles.feature_card_content}>
@@ -129,7 +133,7 @@ export default function Home() {
             
           >
             <div className={widgetStyles.feature_card}>
-              <div className={widgetStyles.feature_card_icon}>
+              <div className={widgetStyles.feature_card_icon + " h-20 w-20 bg-black"}>
                 <i className="icon-layers"></i>
               </div>
               <div className={widgetStyles.feature_card_content}>
@@ -144,7 +148,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="sect sect--charts">
+      <section className="px-16 py-1 mb-10">
         <div className={styles.col}>
           <div className="bitcoin-pricing widget"></div>
         </div>
@@ -153,10 +157,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="sect sect--process">
-        <h3>The Process</h3>
-        <div className="{styles.row">
-          <div className="features-list">
+      <section className="px-16 py-1">
+        <h2>The Process</h2>
+        <div className={styles.row}>
+          <div className="flex gap-12 flex-col md:flex-row">
             <div
               className="   wow fadeIn animated"
               data-wow-delay="100ms"
@@ -167,7 +171,7 @@ export default function Home() {
               
             >
               <div className={widgetStyles.feature_card}>
-                <div className={widgetStyles.feature_card_icon}>
+                <div className={widgetStyles.feature_card_icon + " h-20 w-20 bg-black"}>
                   <i className="icon-briefcase"></i>
                 </div>
                 <div className={widgetStyles.feature_card_content}>
@@ -193,7 +197,7 @@ export default function Home() {
               
             >
               <div className={widgetStyles.feature_card}>
-                <div className={widgetStyles.feature_card_icon}>
+                <div className={widgetStyles.feature_card_icon + " h-20 w-20 bg-black"}>
                   <i className="icon-wallet"></i>
                 </div>
                 <div className={widgetStyles.feature_card_content}>
@@ -219,7 +223,7 @@ export default function Home() {
               
             >
               <div className={widgetStyles.feature_card}>
-                <div className={widgetStyles.feature_card_icon}>
+                <div className={widgetStyles.feature_card_icon + " h-20 w-20 bg-black"}>
                   <i className="icon-bargraph"></i>
                 </div>
                 <div className={widgetStyles.feature_card_content}>
@@ -240,11 +244,11 @@ export default function Home() {
         </div>
       </section>
       <section className={styles.sect_pricing}>
-        <div className="container">
+        <div className="">
           <div className={styles.row}>
             <div className="   ">
               <div className="heading heading-1 text--center ">
-                <p className={styles.heading_subtitle}>Invest Now!</p>
+                <p className={styles.heading_subtitle + " italic text-gray-600"}>Invest Now!</p>
                 <h2 className="heading--title">Our Pricing</h2>
                 <p className={styles.heading_desc}>
                   Invest now with us to earn every day and forever in your
@@ -253,7 +257,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className={styles.row}>
+          <div className="w-11/12 flex flex-col md:flex-row gap-9 my-16 mx-auto">
             <div
               className="
                   
@@ -309,8 +313,9 @@ export default function Home() {
                 animationName: "fadeInUp" }}
               
             >
-              <div className={widgetStyles.pricing_panel}>
-                <div className="{widgetStyles.pricing_heading text--center">
+              <div className={widgetStyles.pricing_panel + " bg-yellow-400"}>
+            {/*ERRROR CHECK IT LATER */}
+                <div className={ "bg-yellow-400 " + widgetStyles.pricing_heading + " text--center"}>
                   <div className="pricing--icon">
                     <img
                       src="assets/images/icons/BitcoinIcon5.png"
@@ -326,12 +331,13 @@ export default function Home() {
                   <a className="btn btn--white btn--bordered btn--rounded" href="#"
                     >Invest Now</a
                   >
+                {/*ERRROR CHECK IT LATER */}
+
                 </div>
 
                 <div className="pricing--footer">From $10000 to $20000</div>
               </div>
             </div>
-
             <div
               className="
                   
@@ -345,10 +351,9 @@ export default function Home() {
                 visibility: "visible",
                 animationDelay: "300ms",
                 animationName: "fadeInUp" }}
-              
             >
-              <div className="widgetStyles.pricing_panel">
-                <div className="{widgetStyles.pricing_heading text--center">
+              <div className={widgetStyles.pricing_panel}>
+                <div className={widgetStyles.pricing_heading}>
                   <div className="pricing--icon">
                     <img
                       src="assets/images/icons/BitcoinIcon4.png"

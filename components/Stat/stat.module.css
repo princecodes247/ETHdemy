@@ -1,0 +1,27 @@
+.Stat {
+  background-color: #49494b5b;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+  .img {
+    margin-right: 10px;
+    width: 40px;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    .h3 {
+      font-weight: 500;
+      font-size: 1.5rem;
+    }
+@media only screen and (max-width: 600px) {
+  .Stat {
+    margin: 5px;
+  }
+}

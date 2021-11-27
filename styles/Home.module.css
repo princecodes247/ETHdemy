@@ -9,15 +9,18 @@
 }
 
 .main {
-  padding: 0 0 5rem 0;
+  padding: 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
-
+.col {
+  
+  flex: 1;
+}
 
 .header {
   /* position: fixed; */
@@ -49,10 +52,15 @@
 }
 
 
+.sect_hero, .sect_why, .sect_charts, .sect_pricing {
+  padding: 20px 4em;
+  display: flex;
+}
+
 
 .sect_hero {
-  /* background: url("../assets/images/backgrounds/blob-scene-1.svg") no-repeat;
-  background: url("../assets/images/backgrounds/stacked-waves-3.svg") no-repeat; */
+  /* background: url("../assets/images/backgrounds/stacked-waves-3.svg") no-repeat; */
+  background: url("../public/images/backgrounds/stacked-waves-3.svg") no-repeat;
   background-size: 100%;
   /* background-clip: content-box; */
   /* background-attachment: fixed; */
@@ -60,6 +68,7 @@
   background-position-y: -50px;
   height: 100vh;
   min-height: 20em;
+  /* background: red; */
 }
 
 .partners__list {
@@ -67,10 +76,10 @@
   gap: 10px;
 }
 
-.sect > .col{
+.sect_hero, .sect_why, .sect_charts, .sect_pricing > .col{
   flex: 1;
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
 }
 
 .hero__text .btn{

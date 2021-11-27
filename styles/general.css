@@ -5,16 +5,16 @@
     /* border: 1px solid red; */
 }
 
-/* @font-face {
+ @font-face {
     font-family: Nunito;
-    src: url("../fonts/Nunito-Regular.ttf");
-} */
+    src: url("../public/fonts/Nunito-Regular.ttf");
+} 
 
 
 
 body {
     /* display: flex; */
-    font-family: "Inter";
+    font-family: "Nunito";
     background-color: var(--primary-bg);
     color: var(--text_color--default);
     /* width: 100vw;
@@ -66,4 +66,10 @@ h6 {
 font-size: 1.15rem;
 line-height: 110%;
 margin: .7666666667rem 0 .46rem 0;
+}
+
+.col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }

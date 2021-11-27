@@ -1,11 +1,4 @@
-{/* <li class="menu__item active">
-<a href="./dashboard.html" target="_blank" rel="noopener noreferrer">
-    <div class="menu__icon">
-    <ion-icon name="wallet-outline"></ion-icon>
-</div>
-    <p>Dashboard</p>
-</a>
-</li> */}
+
 import Link from 'next/link'
 import styles from '../styles/sideMenu.module.css'
 import { useRouter } from 'next/router'
@@ -18,9 +11,12 @@ export default function SideMenuItem(props) {
      let target = props.name.toLowerCase()
      if (target === "dashboard") {
          target = ""
-     }else if (target === "deposit/withdraw") {
-        target = "funds"
-    } else if (target === "transaction history") {
+     }else if (target === "deposit") {
+        target = "deposit"
+    }else if (target === "withdraw") {
+        target = "withdraw"
+    }
+     else if (target === "transaction history") {
         target = "history"
     } else if (target === "add accounts") {
         target = "accounts"

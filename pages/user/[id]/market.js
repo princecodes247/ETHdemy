@@ -1,11 +1,14 @@
 import Link from 'next/link'
 import Head from 'next/head'
 import DashboardLayout from '../../../components/dashboardLayout'
+import DashboardSection from '../../../components/dashboardSection'
 
 import { useRouter } from 'next/router'
   
+import withAuth from "../../../HOC/withAuth";
 
-export default function Market() {
+const Market = () => {
+
   const router = useRouter()
   const url = router.asPath
 
@@ -15,12 +18,12 @@ export default function Market() {
       <Head>
         <title>Dashboard</title>
       </Head>
-      <h1>First </h1>
-      <h2>
-        <Link href="/">
-          <a>Back to home</a>
-        </Link>
-      </h2>
+      <DashboardSection>
+        <h1>Buy Bitcoins </h1>
+      <p>Don't know where to get your bitcoins? Here are some options</p>
+      </DashboardSection>
     </DashboardLayout>
   )
 }
+
+export default withAuth(Market)
