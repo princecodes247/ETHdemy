@@ -6,10 +6,10 @@ import tableStyles from '../styles/table.module.css'
 export default function AccountsTableItem(props) {
 
     return   <tr className={tableStyles.tr}>
-    <td className={tableStyles.td}>{props.id}</td>
-    <td className={tableStyles.td}>{props.type}</td>
-    <td className={tableStyles.td}>{props.option}</td>
-    <td className={tableStyles.td}>{props.routing == "" ? "Unavailable" : props.routing}</td>
+    <td className={tableStyles.td}>{props.accountNumber}</td>
+    <td className={tableStyles.td}>{props.accountName}</td>
+    <td className={tableStyles.td}>{props.bankName}</td>
+    <td className={tableStyles.td}>{props.routingNumber == "" ? "Unavailable" : props.routingNumber}</td>
   </tr>
  
   }

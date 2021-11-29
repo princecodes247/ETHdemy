@@ -1,48 +1,53 @@
 
-import axios from "axios"
-import authHeader from "./authHeader"
-const authApiHeaders = {
+import api from "./api"
+ 
 
-};
-const baseUrl = "http://127.0.0.1:3002/api/user/";
-
-const getUserDetails = (id) => {
-  return axios.get(baseUrl + "dashboard/" + id, {
-    headers: authHeader()
-  })
+ const getUserDetails = (id) => {
+  return api.get( "/user/dashboard/" + id)
 }
-const getHistory = (id) => {
-  return axios
-      .get(baseUrl + "history" + id, authHeader())
+ const getHistory = (id) => {
+  return api.get( "/user/history/" + id)
+}
+
+ const updateSettings = (id) => {
+  return api.post( "/user/updateSettings/" + id)
+      .then(response => {
+        return response.data
+      }) 
+}
+ const addWithdrawalAccount = (id, account) => {
+  return api.post( "/user/addAccount/", {userID:id, ...account})
+      .then(response => {
+        return response.data
+      })
+      
+}
+const withdraw = (id, data) => {
+  return api.post( "/user/withdraw/", {userID:id, ...data})
+      .then(response => {
+        return response.data
+      })
+      
+}
+const deposit = (id, data) => {
+  return api.post( "/user/deposit/", {userID:id, ...data})
       .then(response => {
         return response.data
       })
       
 }
 
-const updateSettings = (id) => {
-  return axios
-      .post(baseUrl + "updateSettings" + id, authHeader())
-      .then(response => {
-        return response.data
-      })
-      
-}
-const addWithdrawalAccount = (id) => {
-  return axios
-      .post(baseUrl + "addAccount" + id, authHeader())
-      .then(response => {
-        return response.data
-      })
-      
-}
 
 
-const userApi = {
+ const UserService = {
   getUserDetails,
   getHistory,
   updateSettings,
   addWithdrawalAccount,
-}
+  withdraw,
+  deposit,
+ }
 
-export default userApi;
+
+
+export default UserService;

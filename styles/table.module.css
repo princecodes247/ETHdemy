@@ -8,7 +8,13 @@
     border: none;
 }
 .tr {
+    background: #fff0;
+    height: 60px;
     border-bottom: 1px solid rgba(0,0,0,0.12);
+    transition: background 200ms;
+}
+.tr:hover {
+    background: #fff1;
 }
 .td, .th {
     padding: 15px 5px;
@@ -16,4 +22,8 @@
     text-align: left;
     vertical-align: middle;
     border-radius: 2px;
+}
+
+.td{
+    min-width: 100px;
 }

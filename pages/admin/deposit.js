@@ -3,11 +3,11 @@ import Head from 'next/head'
 import { useState } from 'react'
 import copy from 'copy-to-clipboard'
 
-import DashboardLayout from '../../../components/dashboardLayout'
-import DashboardSection from '../../../components/dashboardSection'
+import DashboardLayout from '../../components/dashboardLayout'
+import DashboardSection from '../../components/dashboardSection'
 import { useRouter } from 'next/router'
-  import userService from "../../../services/user.service"; 
-import withAuth from "../../../HOC/withAuth";
+  import userService from "../../services/user.service"; 
+import withAuth from "../../HOC/withAuth";
 
 const Deposit = (props) => {
   const router = useRouter()
@@ -35,9 +35,8 @@ const Deposit = (props) => {
 
        userService.deposit(props.id, data)
         .then(res => {
-           if (res.data.user.role > 0) {
-            router.replace("/admin/" + props.id)
-          }
+          console.log(props.id)
+          console.log(res)
           setMakingDeposit(false)
           setAlert("Confirmation Request Sent! Will be processed in 24 hours")
   

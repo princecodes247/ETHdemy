@@ -2,13 +2,25 @@
 import styles from '../styles/sideMenu.module.css'
 import SideMenuItem from './sideMenuItem'
 
-import authApi2 from "../services/auth.service"
+import AdminService from "../services/admin.service"
+import AuthService from "../services/auth.service"
 
+import { useRouter } from 'next/router'
+  
+
+
+
+export default function SideMenu(props) {
+  const router = useRouter()
   const handleLogout = () => {
-    authApi2.logOut();
+    if (props.admin) {
+      AdminService.logout();
+    } else {
+    AuthService.logout();
+    }
+    router.replace("/")
   }
-export default function SideMenu() {
-  const menuItems = [
+  let menuItems = [
     {
       name:"Dashboard",
       desc:"Dashboard",
@@ -45,7 +57,20 @@ export default function SideMenu() {
       icon: "wallet"
     }
   ]
-  
+  if (props.admin) {
+     menuItems = [
+    {
+      name:"Dashboard",
+      desc:"Dashboard",
+      icon:"wallet"
+    },
+    {
+      name:"Settings",
+      desc:"General Settings",
+      icon:"wallet"
+    },
+    ]
+  }
     return <aside className= {styles.menuContainer}>
             <ul className= {styles.menu}>
              { menuItems.map(menuItem=>{

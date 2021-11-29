@@ -20,9 +20,8 @@ const Withdraw = (props) => {
   useEffect(()=> {
      userService.getUserDetails(props.id)
         .then(res => {
-           if (res.data.user.role > 0) {
-            router.replace("/admin/" + props.id)
-          }
+          console.log(props.id)
+          console.log(res.data.user)
           setBalance(res.data.user.balance.currBalance)
           setAccountList(res.data.user.accountDetails)
         })

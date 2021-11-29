@@ -4,7 +4,7 @@ import Head from 'next/head'
 import withAuth from "../../../HOC/withAuth";
 
 import { useGetCoinsQuery } from "../../../services/cryptoApi";
-import userApi from "../../../services/user.service";
+import userService from "../../../services/user.service";
 
 import millify from "millify";
 import Coins from "../../../components/Coins";
@@ -31,14 +31,19 @@ const Dashboard = (props) => {
   // const {id} = router.query
  const { data, isCoinsFetching } = useGetCoinsQuery(10);
   const [user, setUser] = useState({
-    username: "",
-    balance: 100
+      userName: "",
+      balance: {
+        prevBalance: 0,
+        currBalance: 0,
+      }
   })
   useEffect(()=> {
-      userApi.getUserDetails(props.id)
+      userService.getUserDetails(props.id)
         .then(res => {
-          console.log(res)
-          // setUser(res.body)
+          if (res.data.user.role > 0) {
+            router.replace("/admin/" + props.id)
+          }
+          setUser(res.data.user)
         })
         .catch(err => {
           console.log(err)

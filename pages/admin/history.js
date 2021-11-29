@@ -19,9 +19,7 @@ const History = ( props ) => {
   useEffect(()=> {
       userService.getUserDetails(props.id)
         .then(res => {
-           if (res.data.user.role > 0) {
-            router.replace("/admin/" + props.id)
-          }
+          console.log(res)
           setTransHistory(res.data.user.transHistory)
         })
         .catch(err => {

@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import styles from '../styles/dashboardLayout.module.css'
 import { useRouter } from 'next/router'
-export default function SideMenuItem(props) {
+export default function DashboardOlItem(props) {
 
     return   <li className={styles.asset}>
         

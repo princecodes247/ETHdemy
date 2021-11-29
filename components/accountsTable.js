@@ -17,14 +17,16 @@ export default function AccountsTable(props) {
     <thead>
       <tr className={tableStyles.tr}>
           <th className={tableStyles.th}>Acc No./Wallet</th>
-          <th className={tableStyles.th}>Acc Name/Type</th>
-          <th className={tableStyles.th}>Bank Name/Crypto</th>
+          <th className={tableStyles.th}>Acc Name</th>
+          <th className={tableStyles.th}>Bank Name/Crypto Type</th>
           <th className={tableStyles.th}>Routing No.</th>
       </tr>
     </thead>
 
     <tbody>
-      <AccountsTableItem {...account}/>
+      {props.accounts.map(account => {
+              return (<AccountsTableItem {...account}/>)
+            })}
     </tbody>
   </table>
     </DashboardSection>

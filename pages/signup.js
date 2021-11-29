@@ -1,10 +1,11 @@
 import { useRouter } from 'next/router'
 import DashboardSection from '../components/dashboardSection'
 import { useState, useEffect } from "react"
-import authApi2 from "../services/auth.service"
+import AuthService from "../services/auth.service"
+import forwardAuth from "../HOC/forwardAuth";
 
 const SignUp = () => {
-	
+	const router = useRouter()
 	let [fullName, setFullName] = useState("")
 	let [userName, setUserName] = useState("")
 	let [email, setEmail] = useState("")
@@ -31,12 +32,12 @@ const SignUp = () => {
 			confirmPassword,
 		}
 		console.log("sent")
-		authApi2.register(data)
+		AuthService.register(data)
 			.then(resp => {
 				console.log(resp)
 				console.log(resp.data.message)
-				if (resp.data.status == 200) {
-					// Router.replace("/login")
+				if (resp.status == 200) {
+					router.replace("/login")
 				} else if (resp.data.status == 500) {
 					setFormAlert(resp.data.message)
 				}
@@ -62,7 +63,7 @@ const SignUp = () => {
 
 	},[password, confirmPassword])
 	
-  const router = useRouter()
+  
   const { pid } = router.query
 
   return <DashboardSection>
@@ -150,4 +151,4 @@ const SignUp = () => {
   </DashboardSection>
 }
 
-export default SignUp
+export default forwardAuth(SignUp)

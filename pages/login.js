@@ -2,7 +2,8 @@ import { useRouter } from 'next/router'
 import DashboardSection from '../components/dashboardSection'
 import { Formik, Field, Form, ErrorMessage } from "formik"
 import * as Yup from "yup"
-import authApi2 from "../services/auth.service"
+import AuthService from "../services/auth.service"
+import forwardAuth from "../HOC/forwardAuth";
 
 
 const Login = () => {
@@ -20,7 +21,7 @@ const Login = () => {
   const handleLogin = async (formValue) => {
     const {email, password} = formValue
     console.log(email)
-    let res = await authApi2.login(email, password)
+    let res = await AuthService.login(email, password)
     console.log(res)
     Router.replace(`/user/${res.id}`)
   }
@@ -64,4 +65,4 @@ const Login = () => {
   </DashboardSection>
 }
 
-export default Login
+export default forwardAuth(Login)

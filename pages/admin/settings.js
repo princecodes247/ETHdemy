@@ -13,7 +13,7 @@ const Settings = () => {
   const url = router.asPath
 
   const usernameInitialValues = {
-    username: "",
+    email: "",
     password: ""
   }
   const usernameValidationSchema = Yup.object().shape({
@@ -23,7 +23,7 @@ const Settings = () => {
   const handleUpdateUsername = async (formValue) => {
     const {username, password} = formValue
     // console.log(email)
-    let res = await UserService.updatePassword(email, password)
+    // let res = await AuthService.updatePassword(email, password)
     console.log(res)
   }
 
@@ -42,7 +42,7 @@ const Settings = () => {
   const handleUpdatePassword = async (formValue) => {
     const {oldPassword, newPassword, confirmPassword} = formValue
     // console.log(email)
-    let res = await UserService.updatePassword(oldPassword, newPassword)
+    // let res = await AuthService.updatePassword(email, password)
     console.log(res)
   }
 
@@ -80,7 +80,7 @@ const Settings = () => {
      
     <div className="flex items-center justify-between">
       <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-        Update Username
+        Login
       </button>
     </div>
 

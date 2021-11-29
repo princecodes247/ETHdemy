@@ -1,45 +1,37 @@
+import api from "./api"
+import TokenService from "./token.service"
 
-import axios from "axios"
-import authHeader from "./authHeader"
-const authApiHeaders = {
 
-};
-const baseUrl = "http://127.0.0.1:3002/api/auth/";
 
-const register = (userDetails) => {
-  return axios.post(baseUrl + "signup", userDetails)
-}
-const login = (username, password) => {
-  return axios
-      .post(baseUrl + "login", {username, password})
-      .then(response => {
-        if (response.data.accessToken) {
-          localStorage.setItem("user", JSON.stringify(response.data))
-        }
-        return response.data
-      })
-      
-}
+  const register = (userDetails) => {
+    return api.post("/auth/signup", userDetails)
+  }
+  const login = (username, password) => {
+    return api
+        .post("/auth/login", {username, password})
+        .then(response => {
+          if (response.data.accessToken) {
+            TokenService.setUser(response.data)
+          }
+          return response.data
+        })
+        
+  }
 
-const logOut = () => {
-  return axios
-      .delete(baseUrl + "logout",{headers: authHeader()})
-      .then(response => {
-        localStorage.removeItem("user")
-        return response.data
-      })
-      .catch(err => {
-        console.log(err)
-      })
-      .then(response => {
-          localStorage.removeItem("user")
-      })
-}
 
-const authApi2 = {
+
+  const logout = () => {
+    TokenService.removeUser("user");
+  }
+ const  getCurrentUser = () => {
+    return TokenService.getUser("user");
+  }
+
+const AuthService = {
   register,
   login,
-  logOut
+  logout,
+  getCurrentUser
 }
 
-export default authApi2;
+export default AuthService;
