@@ -1,25 +1,25 @@
 import Link from 'next/link'
 import Head from 'next/head'
 
-import withAuth from "../../../HOC/withAuth";
+import withAuth from "../../HOC/withAuth";
 
-import { useGetCoinsQuery } from "../../../services/cryptoApi";
-import userService from "../../../services/user.service";
+import { useGetCoinsQuery } from "../../services/cryptoApi";
+import userService from "../../services/user.service";
 
 import millify from "millify";
-import Coins from "../../../components/Coins";
-import Fiats from "../../../components/Fiats";
-import News from "../../../components/News";
-import Loading from "../../../components/Loading";
-import Stat from "../../../components/Stat";
+import Coins from "../../components/Coins";
+import Fiats from "../../components/Fiats";
+import News from "../../components/News";
+import Loading from "../../components/Loading";
+import Stat from "../../components/Stat";
 
-import dashboardStyles from '../../../styles/dashboardLayout.module.css'
-import DashboardLayout from '../../../components/dashboardLayout'
-import DashboardSection from '../../../components/dashboardSection'
-import DashboardBalanceSection from '../../../components/dashboardBalanceSection'
-import DashboardGraphSection from '../../../components/dashboardGraphSection'
-import SubNav from '../../../components/subNav'
-import DashboardOl from '../../../components/dashboardOl'
+import dashboardStyles from '../../styles/dashboardLayout.module.css'
+import DashboardLayout from '../../components/dashboardLayout'
+import DashboardSection from '../../components/dashboardSection'
+import DashboardBalanceSection from '../../components/dashboardBalanceSection'
+import DashboardGraphSection from '../../components/dashboardGraphSection'
+import SubNav from '../../components/subNav'
+import DashboardOl from '../../components/dashboardOl'
 
 import { useState, useEffect } from "react"
 import { useRouter } from 'next/router'

@@ -1,13 +1,13 @@
 import Link from 'next/link'
 import Head from 'next/head'
-import DashboardLayout from '../../../components/dashboardLayout'
+import DashboardLayout from '../../components/dashboardLayout'
 
-import HistoryList from '../../../components/historyList'
+import HistoryList from '../../components/historyList'
 import { useState, useEffect } from "react"
 import { useRouter } from 'next/router'
   
-import withAuth from "../../../HOC/withAuth";
-import userService from "../../../services/user.service";
+import withAuth from "../../HOC/withAuth";
+import userService from "../../services/user.service";
 
 
 const History = ( props ) => {

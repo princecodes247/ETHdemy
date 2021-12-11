@@ -11,7 +11,12 @@
     justify-content: center;
     align-items: center;
     transition: 400ms;
+    z-index: 4;
+}
 
+.menuContainer:hover {
+    min-width: 16em;
+    background: var(--secondary-accent);
 }
 
  @media only screen and  (max-width:667px) {
@@ -21,16 +26,15 @@
         height: 0vh;
         min-width: 100vw;
     }
+    .menuContainer:hover {
+    min-width: 100vw;
+    background: var(--secondary-accent);
+    /* flex: 10; */
+}
     .menuContainer.open {
         height: 100vh;
     }
  }
-
-.menuContainer:hover {
-    min-width: 16em;
-    background: var(--secondary-accent);
-    /* flex: 10; */
-}
 
 .menuContainer:hover .menu__item_active::before, .menuContainer:hover .menu__item_active::after {
     

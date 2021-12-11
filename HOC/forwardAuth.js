@@ -18,7 +18,7 @@ const forwardAuth = (WrappedComponent) => {
 
 
 
-				Router.replace(`/user/${user.id}`)
+				Router.replace(`/user/`)
 				return null;
 		
 			

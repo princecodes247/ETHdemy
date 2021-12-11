@@ -2,14 +2,14 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { useState, useEffect } from 'react'
 
-import DashboardLayout from '../../../components/dashboardLayout'
-import DashboardSection from '../../../components/dashboardSection'
-import AccountsTable from '../../../components/accountsTable'
+import DashboardLayout from '../../components/dashboardLayout'
+import DashboardSection from '../../components/dashboardSection'
+import AccountsTable from '../../components/accountsTable'
 
 import { useRouter } from 'next/router'
   
-import withAuth from "../../../HOC/withAuth";
-import userService from "../../../services/user.service";
+import withAuth from "../../HOC/withAuth";
+import userService from "../../services/user.service";
 
 const Accounts = ( props ) => {
   const router = useRouter()

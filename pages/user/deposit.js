@@ -3,11 +3,11 @@ import Head from 'next/head'
 import { useState } from 'react'
 import copy from 'copy-to-clipboard'
 
-import DashboardLayout from '../../../components/dashboardLayout'
-import DashboardSection from '../../../components/dashboardSection'
+import DashboardLayout from '../../components/dashboardLayout'
+import DashboardSection from '../../components/dashboardSection'
 import { useRouter } from 'next/router'
-  import userService from "../../../services/user.service"; 
-import withAuth from "../../../HOC/withAuth";
+  import userService from "../../services/user.service"; 
+import withAuth from "../../HOC/withAuth";
 
 const Deposit = (props) => {
   const router = useRouter()

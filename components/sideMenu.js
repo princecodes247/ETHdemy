@@ -71,7 +71,7 @@ export default function SideMenu(props) {
     },
     ]
   }
-    return <aside className= {styles.menuContainer}>
+    return <aside className={`${styles.menuContainer} ${props.menuIsOpen ? styles.open: ""}`}>
             <ul className= {styles.menu}>
              { menuItems.map(menuItem=>{
                let element = <SideMenuItem name={menuItem.name} desc={menuItem.desc} icon={menuItem.icon}/>

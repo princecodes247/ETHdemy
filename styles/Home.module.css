@@ -22,6 +22,11 @@
   flex: 1;
 }
 
+.col2 {
+  
+  flex: 1;
+}
+
 .header {
   /* position: fixed; */
   position: sticky;
@@ -67,7 +72,7 @@
   background-position: bottom;
   background-position-y: -50px;
   height: 100vh;
-  min-height: 20em;
+  min-height: 100vh;
   /* background: red; */
 }
 
@@ -222,4 +227,55 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+
+
+@media only screen and (min-width:320px) and (max-width:767px) {
+    .nav_links {
+        display: none;
+    }
+
+
+    .header .cta_btns{
+        display: none;
+    }
+    .sect_hero {
+        background-size: 300%;
+        /* background-position-y: 20px; */
+        background-origin: top;
+    }
+    .hero__text {
+      text-align: center;
+    }
+    .col2 {
+        display: none;
+    }
+
+    .sect_why, .sect {
+      text-align: center;
+        flex-direction: column;
+    }
+    .partners {
+        width: 100%;
+    }
+
+    .widget {
+        margin: 30px 0;
+    }
+}
+
+@media only screen and (min-width:590px) and (max-width:767px) {
+    .sect_hero {
+        /* background-size: 300%; */
+        background-position-y: -120px;
+        /* background-origin: top; */
+    }
+}
+@media only screen and (min-width:643px) and (max-width:767px) {
+    .sect_hero {
+        /* background-size: 300%; */
+        background-position-y: -250px;
+        /* background-origin: top; */
+    }
 }

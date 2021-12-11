@@ -1,13 +1,13 @@
 import styles from '../styles/dashboardLayout.module.css'
-
+import HamMenu from './hamMenu'
 import Link from 'next/link'
 import authApi2 from "../services/auth.service"
 
   const handleLogout = () => {
     authApi2.logOut();
   }
-export default function DashboardNav({ children }) {
-    return <header className={styles.dashboardNav}>
+export default function DashboardNav({menuIsOpen, setMenuIsOpen}) {
+    return <header className={`${styles.dashboardNav} ${menuIsOpen ? styles.open : ""}`}>
     <Link href="" passHref>
         <div className={ styles.profile}>
             <div className={styles.profile__pic}></div>
@@ -19,11 +19,7 @@ export default function DashboardNav({ children }) {
     <div className="waves-effect waves-light btn btn--log_out"
         onClick={handleLogout}
     >Log Out</div>
-    <div className="menu_ham">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+    <HamMenu state={menuIsOpen} setState={setMenuIsOpen}/>
 </header>
 
     

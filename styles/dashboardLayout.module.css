@@ -3,11 +3,10 @@
   font-family: Nunito, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background-color: var(--primary-bg);
   color: var(--text_color--default);
-  /* width: 100vw;
-  overflow: hidden; */
 }
 
 .dashboardNav {
+  position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -16,6 +15,12 @@
   height: 10vh;
   width: 100%;
   padding: 0 10px;
+  z-index: 0;
+}
+.dashboardNav.open {
+  z-index: 10;
+  position: fixed;
+  top: 0;
 }
 
 
@@ -66,8 +71,6 @@
 }
 
 .sect_income_summary {
-  /* flex: 8; */
-  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

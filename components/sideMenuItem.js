@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 export default function SideMenuItem(props) {
     const router = useRouter()
      const url = router.asPath
-     const {id} = router.query
      let currPage = url.split("/")[3]
      currPage = currPage ? currPage : "dashboard"
      let target = props.name.toLowerCase()
@@ -22,8 +21,7 @@ export default function SideMenuItem(props) {
         target = "accounts"
     }
     return <Link href={{
-            pathname: "/user/[id]/"+target,
-            query: {id}
+            pathname: "/user/"+target
             }} passHref target="_blank" rel="noopener noreferrer">
     <li className={`${styles.menu__item} ${props.name.toLowerCase() === currPage.toLowerCase() ? styles.menu__item_active : ""}`}>
         <div className={styles.menu__icon}>

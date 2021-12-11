@@ -2,9 +2,101 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import widgetStyles from '../styles/widgets.module.css'
+import Header from '../components/Header'
+import PopUp from '../components/PopUp'
+import ChatSect from '../components/ChatSect'
+import {BsCurrencyExchange} from 'react-icons/bs';
+import {MdSecurity, MdAccountTree} from 'react-icons/md';
 // import Link from 'next/link'
+import { useState, useEffect } from "react"
+   
+  const FeatureCard = (props) => {
+    return <div
+            className="   wow fadeInUp animated"
+            data-wow-delay="100ms"
+            style={{
+              visibility: "visible",
+              animationDelay: '100ms',
+              animationName: "fadeInUp" }}
+          >
+            <div className="text-center sm:text-left">
+              <div className=" mx-auto sm:mx-0 h-20 w-20 bg-black">
+                <i className="icon-lock"></i>
+              </div>
+              <div className={widgetStyles.feature_card_content}>
+                <h3 className={widgetStyles.feature_card_title}>{props.title}</h3>
+                <p className={widgetStyles.feature_card_desc}>
+                 {props.desc}
+                </p>
+              </div>
+            </div>
+          </div>
+  }
+  const PricingCard = (props) => {
+    return   <div
+              className=" wow fadeInUp animated"
+              data-wow-delay="100ms"
+              style={{
+                visibility: "visible",
+                animationDelay: '100ms',
+                animationName: "fadeInUp" }}
+            >
+              <div className={widgetStyles.pricing_panel}>
+                <div className="bg-secondary-bg py-16 px-4 mb-3 rounded-md">
+                  <div className="pricing--icon">
+                    <img
+                      src="assets/images/icons/BitcoinIcon4.png"
+                      alt="Bitcoin Icon"
+                    />
+                  </div>
+                  <h4>Starter Crypto Plan</h4>
+                  <p className="text-xxl">12<span className="text-md">%</span></p>
+                  <div className="mb-8">
+                    Enjoy your investment with Bitcoin or Ethereum growing every
+                    day.
+                  </div>
+                   <a href="/signup" className="bg-primary-accent text-black px-8 py-3 rounded-md mt-3">Invest Now!</a>
+                </div>
+
+                <div className="pricing--footer">From $1000 to $10000</div>
+              </div>
+            </div>
+
+
+  }
 
 export default function Home() {
+
+  
+  let whys = [
+    {
+      title: "Protection & Security",
+      desc: "Stop loss and take profit orders will help secure your                       investment. The system will automatically execute trades to realise gains.",
+    },
+    {
+      title:  "Licensed Exchange",
+      desc: "Our customers perform transactions not only in cryptocurrency,                  but the major world currencies supported by the system."
+    },
+    {
+      title: "Multi Currency Accounts",
+      desc:  "Support major currencies: USD, EUR, GBP, and various Cryptocurrencies. Funds exchanged between currencies at market rate."
+    }
+  ]
+  let processes = [
+    {
+      title: "Sign Up For Free",
+      desc: "Create a digital currency wallet for free, where you can securely store all your digital currency.",
+    },
+    {
+      title:  "Create Your Wallet",
+      desc: "Bitcoin is received, stored, and sent using Bitcoin Wallet’.Download official Bitcoin Wallet for free."
+    },
+    {
+      title: " Buy & Invest Digital Currency",
+      desc:  " Buy some Bitcoin, Ethereum, or any other Digital Currency to begin using the future of money."
+    }
+  ]
+    
   return (
 
       <main className={styles.main}>
@@ -17,39 +109,26 @@ export default function Home() {
             rel="stylesheet"
           />
         </Head>
-        <header className={styles.header}>
-          <div className={styles.nav}>
-            <div className="flex-1">Grypto</div>
-            <ul className={"gap-8 hidden md:flex"}>
-              <li className={styles.nav_link}>Home</li>
-              <li className={styles.nav_link}>Home</li>
-              <li className={styles.nav_link}>Home</li>
-            </ul>
-          </div>
-          <div className="cta_btns hidden md:flex gap-5">
-            <button className="btn">Sign In</button>
-            <button className="btn">Sign Up</button>
-          </div>
-        </header>
-      <section className={`${styles.sect_hero} mb-10`}>
+        <Header/>
+      <section className={`${styles.sect_hero} mb-10 pb-14 h-full`}>
         <div className={styles.col}>
           <div className={styles.hero__text}>
             <p className={styles.text_sub}>#1 INVESTMENT PLATFORM</p>
             <h1>Invest, Buy and Sell Stocks and Crypto</h1>
-            <p>
+            <p className="mb-20">
               With Jcrypto, you can buy, sell and invest in stocks and crypto
               without hassle
             </p>
-            <button className="btn">Sign Up</button>
+            <a href="/signup" className="bg-primary-accent text-black px-8 py-2 rounded-md mt-3">Sign Up</a>
           </div>
-          <div className={styles.partners}>
+          <div className="hidden">
             <p className={styles.text_sub}>Over 6,000+ trusted companies in the world</p>
             <div className="glide">
               <div className="glide__track" data-glide-el="track">
             <ul className={styles.partners__list}>
              {
                <li className="partners__item glide__slide">
-               <Image src="/public/images/partners/1.svg" layout='fill' alt="ag" />
+                <Image src="/assets/bitcoin_2.svg" alt="Vercel Logo" width={72} height={16} />
              </li>
              }
             </ul>
@@ -58,13 +137,13 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className={styles.col}>
+        <div className={styles.col2}>
           <img className="hero__img" src="./stuuf" alt="stuff" />
         </div>
       </section>
       <section className={`${styles.sect_why} mb-10`}>
         <div className={styles.col}>
-          <h2>Why Invest in Stocks and Cryptocurrency</h2>
+          <h2 className="text-center sm:text-left">Why Invest in Stocks and Cryptocurrency</h2>
           <p>
             Since 2007, Jcrypto has offered fast and reliable investment
             services and options to many. With its flexible, secure and scalable
@@ -78,74 +157,11 @@ export default function Home() {
       </section>
       <section className="px-16 py-1 mb-10">
         <div className="flex gap-12 flex-col md:flex-row">
-          <div
-            className="   wow fadeInUp animated"
-            data-wow-delay="100ms"
-            style={{
-              visibility: "visible",
-              animationDelay: '100ms',
-              animationName: "fadeInUp" }}
-          >
-            <div className={widgetStyles.feature_card}>
-              <div className={widgetStyles.feature_card_icon + " h-20 w-20 bg-black"}>
-                <i className="icon-lock"></i>
-              </div>
-              <div className={widgetStyles.feature_card_content}>
-                <h3 className={widgetStyles.feature_card_title}>Protection &amp; Security</h3>
-                <p className={widgetStyles.feature_card_desc}>
-                  Stop loss and take profit orders will help secure your
-                  investment. The system will automatically execute trades to
-                  realise gains.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            className="   wow fadeInUp animated"
-            data-wow-delay="200ms"
-            style={{
-              visibility: "visible",
-              animationDelay: "200ms",
-              animationName: "fadeInUp" }}
-            
-          >
-            <div className={widgetStyles.feature_card}>
-              <div className={widgetStyles.feature_card_icon + " h-20 w-20 bg-black"}>
-                <i className="icon-search"></i>
-              </div>
-              <div className={widgetStyles.feature_card_content}>
-                <h3 className={widgetStyles.feature_card_title}>Licensed Exchange</h3>
-                <p className={widgetStyles.feature_card_desc}>
-                  Our customers perform transactions not only in cryptocurrency,
-                  but the major world currencies supported by the system.
-                </p>
-              </div>
-            </div>
-          </div>
+        {whys.map(why=>{
 
-          <div
-            className="   wow fadeInUp animated"
-            data-wow-delay="200ms"
-            style={{
-              visibility: "visible",
-              animationDelay: "200ms",
-              animationName: "fadeInUp" }}
+            return (<FeatureCard title={why.title} desc={why.desc}/>)
+        })}
             
-          >
-            <div className={widgetStyles.feature_card}>
-              <div className={widgetStyles.feature_card_icon + " h-20 w-20 bg-black"}>
-                <i className="icon-layers"></i>
-              </div>
-              <div className={widgetStyles.feature_card_content}>
-                <h3 className={widgetStyles.feature_card_title}>Multi Currency Accounts</h3>
-                <p className={widgetStyles.feature_card_desc}>
-                  Support major currencies: USD, EUR, GBP, and various
-                  Cryptocurrencies. Funds exchanged between currencies at market
-                  rate.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
       <section className="px-16 py-1 mb-10">
@@ -158,88 +174,14 @@ export default function Home() {
       </section>
 
       <section className="px-16 py-1">
-        <h2>The Process</h2>
+        <h2 className="text-center sm:text-left">The Process</h2>
         <div className={styles.row}>
           <div className="flex gap-12 flex-col md:flex-row">
-            <div
-              className="   wow fadeIn animated"
-              data-wow-delay="100ms"
-              style={{
-                visibility: "visible",
-                animationDelay: '100ms',
-                animationName: "fadeIn" }}
-              
-            >
-              <div className={widgetStyles.feature_card}>
-                <div className={widgetStyles.feature_card_icon + " h-20 w-20 bg-black"}>
-                  <i className="icon-briefcase"></i>
-                </div>
-                <div className={widgetStyles.feature_card_content}>
-                  <h3 className={widgetStyles.feature_card_title}>Sign Up For Free</h3>
-                  <p className={widgetStyles.feature_card_desc}>
-                    Create a digital currency wallet for free, where you can
-                    securely store all your digital currency.
-                  </p>
-                  <a href="#" className="read--more"
-                    ><i className="fa fa-plus"></i>Read More</a
-                  >
-                </div>
-              </div>
-            </div>
+             {processes.map(why=>{
 
-            <div
-              className="   wow fadeIn animated"
-              data-wow-delay="200ms"
-              style={{
-                visibility: "visible",
-                animationDelay: "200ms",
-                animationName: "fadeIn" }}
-              
-            >
-              <div className={widgetStyles.feature_card}>
-                <div className={widgetStyles.feature_card_icon + " h-20 w-20 bg-black"}>
-                  <i className="icon-wallet"></i>
-                </div>
-                <div className={widgetStyles.feature_card_content}>
-                  <h3 className={widgetStyles.feature_card_title}>Create Your Wallet</h3>
-                  <p className={widgetStyles.feature_card_desc}>
-                    Bitcoin is received, stored, and sent using Bitcoin Wallet’.
-                    Download official Bitcoin Wallet for free.
-                  </p>
-                  <a href="#" className="read--more"
-                    ><i className="fa fa-plus"></i>Read More</a
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div
-              className="   wow fadeIn animated"
-              data-wow-delay="300ms"
-              style={{
-                visibility: "visible",
-                animationDelay: "300ms",
-                animationName: "fadeIn" }}
-              
-            >
-              <div className={widgetStyles.feature_card}>
-                <div className={widgetStyles.feature_card_icon + " h-20 w-20 bg-black"}>
-                  <i className="icon-bargraph"></i>
-                </div>
-                <div className={widgetStyles.feature_card_content}>
-                  <h3 className={widgetStyles.feature_card_title}>
-                    Buy &amp; Sell Digital Currency
-                  </h3>
-                  <p className={widgetStyles.feature_card_desc}>
-                    Buy some Bitcoin, Ethereum, or any other Digital Currency to
-                    begin using the future of money.
-                  </p>
-                  <a href="#" className="read--more"
-                    ><i className="fa fa-plus"></i>Read More</a
-                  >
-                </div>
-              </div>
-            </div>
+            return (<FeatureCard title={why.title} desc={why.desc}/>)
+        })}
+            
           </div>
         </div>
       </section>
@@ -249,7 +191,7 @@ export default function Home() {
             <div className="   ">
               <div className="heading heading-1 text--center ">
                 <p className={styles.heading_subtitle + " italic text-gray-600"}>Invest Now!</p>
-                <h2 className="heading--title">Our Pricing</h2>
+                <h2 className="text-center sm:text-left">Our Pricing</h2>
                 <p className={styles.heading_desc}>
                   Invest now with us to earn every day and forever in your
                   wallet. We accept Investment from all over the world.
@@ -258,128 +200,15 @@ export default function Home() {
             </div>
           </div>
           <div className="w-11/12 flex flex-col md:flex-row gap-9 my-16 mx-auto">
-            <div
-              className="
-                  
-                price-table
-                wow
-                fadeInUp
-                animated
-              "
-              data-wow-delay="100ms"
-              style={{
-                visibility: "visible",
-                animationDelay: '100ms',
-                animationName: "fadeInUp" }}
-            >
-              <div className={widgetStyles.pricing_panel}>
-                <div className={widgetStyles.pricing_heading}>
-                  <div className="pricing--icon">
-                    <img
-                      src="assets/images/icons/BitcoinIcon4.png"
-                      alt="Bitcoin Icon"
-                    />
-                  </div>
-                  <h4>Starter Crypto Plan</h4>
-                  <p>12<span className="currency">%</span></p>
-                  <div className="pricing--desc">
-                    Enjoy your investment with Bitcoin or Ethereum growing every
-                    day.
-                  </div>
-                  <a
-                    className="btn btn--secondary btn--bordered btn--rounded"
-                    href="#"
-                    >Invest Now</a
-                  >
-                </div>
-
-                <div className="pricing--footer">From $1000 to $10000</div>
-              </div>
-            </div>
-
-            <div
-              className="
-                  
-                price-table
-                pricing-active
-                wow
-                fadeInUp
-                animated
-              "
-              data-wow-delay="200ms"
-              style={{
-                visibility: "visible",
-                animationDelay: "200ms",
-                animationName: "fadeInUp" }}
-              
-            >
-              <div className={widgetStyles.pricing_panel + " bg-yellow-400"}>
-            {/*ERRROR CHECK IT LATER */}
-                <div className={ "bg-yellow-400 " + widgetStyles.pricing_heading + " text--center"}>
-                  <div className="pricing--icon">
-                    <img
-                      src="assets/images/icons/BitcoinIcon5.png"
-                      alt="Bitcoin Icon"
-                    />
-                  </div>
-                  <h4>Basic Crypto Plan</h4>
-                  <p>25<span className="currency">%</span></p>
-                  <div className="pricing--desc">
-                    Enjoy your investment with Bitcoin or Ethereum growing every
-                    day.
-                  </div>
-                  <a className="btn btn--white btn--bordered btn--rounded" href="#"
-                    >Invest Now</a
-                  >
-                {/*ERRROR CHECK IT LATER */}
-
-                </div>
-
-                <div className="pricing--footer">From $10000 to $20000</div>
-              </div>
-            </div>
-            <div
-              className="
-                  
-                price-table
-                wow
-                fadeInUp
-                animated
-              "
-              data-wow-delay="300ms"
-              style={{
-                visibility: "visible",
-                animationDelay: "300ms",
-                animationName: "fadeInUp" }}
-            >
-              <div className={widgetStyles.pricing_panel}>
-                <div className={widgetStyles.pricing_heading}>
-                  <div className="pricing--icon">
-                    <img
-                      src="assets/images/icons/BitcoinIcon4.png"
-                      alt="Bitcoin Icon"
-                    />
-                  </div>
-                  <h4>Starter Crypto Plan</h4>
-                  <p>12<span className="currency">%</span></p>
-                  <div className="pricing--desc">
-                    Enjoy your investment with Bitcoin or Ethereum growing every
-                    day.
-                  </div>
-                  <a
-                    className="btn btn--secondary btn--bordered btn--rounded"
-                    href="#"
-                    >Invest Now</a
-                  >
-                </div>
-
-                <div className="pricing--footer">From $1000 to $10000</div>
-              </div>
-            </div>
+          
+            
+            <PricingCard/>
+            <PricingCard/>
+            <PricingCard/>
           </div>
           <div className="{styles.row">
             <div className="   ">
-              <div className="pricing--notes ">
+              <div className="text-center ">
                 Time until ICO close, ICO is live now. 39 million tokens in
                 total, 9 million tokens issued during the ICO period
               </div>
@@ -387,17 +216,20 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <PopUp/>
+      <ChatSect/>
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+      @Copyright
+       { /*<a
+                 href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+                 target="_blank"
+                 rel="noopener noreferrer"
+               >
+                 Powered by{' '}
+                 <span className={styles.logo}>
+                   <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+                 </span>
+               </a>*/}
       </footer>
       </main>
 
