@@ -1,18 +1,18 @@
 import Link from 'next/link'
 import Head from 'next/head'
 
-// import withAuth from "../../../HOC/withAuth";
+// import withAuth from "../../HOC/withAuth";
 
-import AdminService from "../../../services/admin.service";
+import AdminService from "../../services/admin.service";
 
-import Loading from "../../../components/Loading";
-import UsersList from "../../../components/admin/usersList";
+import Loading from "../../components/Loading";
+import UsersList from "../../components/admin/usersList";
 
-import dashboardStyles from '../../../styles/dashboardLayout.module.css'
-import DashboardLayout from '../../../components/dashboardLayout'
-import DashboardSection from '../../../components/dashboardSection'
-import SubNav from '../../../components/subNav'
-import DashboardOl from '../../../components/dashboardOl'
+import dashboardStyles from '../../styles/dashboardLayout.module.css'
+import DashboardLayout from '../../components/dashboardLayout'
+import DashboardSection from '../../components/dashboardSection'
+import SubNav from '../../components/subNav'
+import DashboardOl from '../../components/dashboardOl'
 
 import { useState, useEffect } from "react"
 import { useRouter } from 'next/router'

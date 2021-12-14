@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import Head from 'next/head'
-import DashboardLayout from '../../../components/dashboardLayout'
-import DashboardSection from '../../../components/dashboardSection'
+import DashboardLayout from '../../components/dashboardLayout'
+import DashboardSection from '../../components/dashboardSection'
 import { Formik, Field, Form, ErrorMessage } from "formik"
 import * as Yup from "yup"
 import { useRouter } from 'next/router'
   
-import withAuth from "../../../HOC/withAuth";
+import withAuth from "../../HOC/withAuth";
 
 const Settings = () => {
   const router = useRouter()
