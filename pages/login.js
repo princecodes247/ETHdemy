@@ -23,7 +23,7 @@ const Login = () => {
     console.log(email)
     let res = await AuthService.login(email, password)
     console.log(res)
-    Router.replace(`/user/${res.id}`)
+    Router.replace(`/user/dashboard`)
   }
 
   return <DashboardSection>
@@ -33,7 +33,7 @@ const Login = () => {
       validationSchema={validationSchema}
       onSubmit={handleLogin}
     >
-        <Form className="bg-white shadow-md rounded px-8 pt-6 pb-8 sm:w-22 mb-4">
+        <Form className="bg-white shadow-md rounded px-8 pt-6 pb-8 md:w-22 mb-4">
   
     <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">

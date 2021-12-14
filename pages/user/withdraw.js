@@ -1,14 +1,14 @@
 import Link from 'next/link'
 import Head from 'next/head'
-import DashboardLayout from '../../../components/dashboardLayout'
-import DashboardSection from '../../../components/dashboardSection'
+import DashboardLayout from '../../components/dashboardLayout'
+import DashboardSection from '../../components/dashboardSection'
 
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 
-import userService from "../../../services/user.service";
+import userService from "../../services/user.service";
 
-import withAuth from "../../../HOC/withAuth";
+import withAuth from "../../HOC/withAuth";
 
 const Withdraw = (props) => {
   const [accountType, setAccountType] = useState("bank")

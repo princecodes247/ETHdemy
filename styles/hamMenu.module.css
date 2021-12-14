@@ -5,16 +5,11 @@
 .ham {
 	display: block;
 	z-index: 100;
-	height: 50px;
-	width: 50px;
-	background: #fff;
 }
 
 .hamOpen {
 	/*position: absolute;*/
-	height: 50px;
-	width: 50px;
-	background: red;
+	/*background: red;*/
 }
 
 .menu {

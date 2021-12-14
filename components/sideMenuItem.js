@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 export default function SideMenuItem(props) {
     const router = useRouter()
      const url = router.asPath
-     let currPage = url.split("/")[3]
+     let currPage = url.split("/")[2]
      currPage = currPage ? currPage : "dashboard"
      let target = props.name.toLowerCase()
      if (target === "dashboard") {
