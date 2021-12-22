@@ -1,12 +1,21 @@
 import styles from '../styles/dashboardLayout.module.css'
 import HamMenu from './hamMenu'
 import Link from 'next/link'
-import authApi2 from "../services/auth.service"
+import AuthService from "../services/auth.service"
+import AdminService from "../services/admin.service"
+import { useRouter } from 'next/router'
 
-  const handleLogout = () => {
-    authApi2.logOut();
-  }
 export default function DashboardNav({menuIsOpen, setMenuIsOpen}) {
+  const handleLogout = ( props ) => {
+     const router = useRouter()
+
+     if (props.admin) {
+      AdminService.logout();
+    } else {
+    AuthService.logout();
+    }
+    router.replace("/")
+  }
     return <header className={`${styles.dashboardNav} ${menuIsOpen ? styles.open : ""}`}>
     <Link href="" passHref>
         <div className={ styles.profile}>

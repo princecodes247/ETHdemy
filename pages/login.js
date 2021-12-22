@@ -15,8 +15,8 @@ const Login = () => {
   }
 
   const validationSchema = Yup.object().shape({
-    email: Yup.string().required("This field is required!"),
-    password: Yup.string().required("This field is required!"),
+    email: Yup.string().email('Email is not valid').required("Email is required!"),
+    password: Yup.string().required("Password is required"),
       })
   const handleLogin = async (formValue) => {
     const {email, password} = formValue
@@ -32,8 +32,10 @@ const Login = () => {
       initialValues={initialValues}
       validationSchema={validationSchema}
       onSubmit={handleLogin}
+      validateOnMount
     >
-        <Form className="bg-white shadow-md rounded px-8 pt-6 pb-8 md:w-22 mb-4">
+ 
+             <Form className="bg-white shadow-md rounded px-8 pt-6 pb-8 md:w-140 mb-4">
   
     <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
@@ -59,8 +61,9 @@ const Login = () => {
       </button>
         <p className="text-black">Not yet registered? <a className="text-blue-700" href="/signup">Sign up here</a></p>
     </div>
-    <p className="text-red-400 mt-3  mb-3 text-sm ">Password must be more than 8 characters</p>
+ 
   </Form>
+       
     </Formik>
   </DashboardSection>
 }

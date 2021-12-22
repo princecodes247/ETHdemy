@@ -148,7 +148,7 @@ export default function Home() {
       </section>
       <section className={`${styles.sect_why} mb-10`}>
         <div className={styles.col}>
-          <h2 className="text-center sm:text-left">Why Invest in Stocks and Cryptocurrency</h2>
+          <h2 className="text-center sm:text-left">Why Invest</h2>
           <p>
             Since 2007, Jcrypto has offered fast and reliable investment
             services and options to many. With its flexible, secure and scalable
