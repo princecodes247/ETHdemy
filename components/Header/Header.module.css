@@ -1,0 +1,30 @@
+
+
+.header {
+  /* position: fixed; */
+  position: sticky;
+  top: 0;
+  display: flex;
+  /* justify-content: flex-end; */
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  /* background-color: var(--tertiary-bg); */
+  /* background-color: #000; */
+  background-color: var(--header-bg);
+  height: 10vh;
+  width: 100%;
+  z-index: 99;
+  /* padding: 0 10px; */
+  padding: 0 5%;
+}
+.nav {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.nav_links {
+  gap: 20px;
+  display: flex;
+}

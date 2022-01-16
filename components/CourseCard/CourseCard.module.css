@@ -1,0 +1,15 @@
+.card {
+	border-radius: 5px;
+}
+.cardImg {
+	background: #000;
+	height: 80px;
+	width: 100%;
+}
+.cardDetails {
+
+}
+.cardTitle {}
+.cardDesc {}
+.cardRating {}
+.cardPrice {}

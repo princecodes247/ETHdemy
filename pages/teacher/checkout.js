@@ -9,7 +9,7 @@ import { useState, useEffect } from "react"
    
   
 
-export default function Dashboard() {
+export default function Wishlist() {
 
   
  

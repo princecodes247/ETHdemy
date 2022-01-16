@@ -1,6 +1,6 @@
  
 import Link from 'next/link'
-import hamMenuStyles from '../../styles/hamMenu.module.css'
+import hamMenuStyles from './hamMenu.module.css'
 export default function MenuList({ state }) {
 		
     return   <div className={state ? hamMenuStyles.menuOpen : hamMenuStyles.menu}>

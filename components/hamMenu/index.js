@@ -2,7 +2,7 @@
 
      import MenuList from './menuList'
 import Link from 'next/link'
-import hamMenuStyles from '../../styles/hamMenu.module.css'
+import hamMenuStyles from './hamMenu.module.css'
 export default function HamMenu({ state, setState, useMenu=false }) {
 		let toggle = ()=>{
 			setState(!state)
