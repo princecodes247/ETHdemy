@@ -9,7 +9,7 @@ import { useState, useEffect } from "react"
    
   
 
-export default function Wishlist() {
+let Wishlist = () => {
 
   
  
@@ -32,3 +32,5 @@ export default function Wishlist() {
    
   )
 }
+
+export default Wishlist;

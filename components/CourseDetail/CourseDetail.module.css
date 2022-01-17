@@ -1,0 +1,29 @@
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 10px;
+    }
+
+    .card {
+	border-radius: 5px;
+	display: flex;
+	grid-gap: 10px;
+}
+.cardImg {
+	background: #000;
+	height: 8em;
+	width: 8em;
+}
+.cardDetails {
+
+}
+.cardTitle {}
+.cardDesc {}
+.cardRating {}
+.cardPrice {}
+.buttonSet {
+	padding-left: 10px;
+	display: flex;
+	grid-gap: 10px;
+}

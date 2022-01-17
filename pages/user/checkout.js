@@ -9,7 +9,7 @@ import { useState, useEffect } from "react"
    
   
 
-export default function Wishlist() {
+export default function Checkout() {
 
   
  
