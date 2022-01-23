@@ -1,16 +1,19 @@
 import Link from 'next/link'
+import Image from 'next/image'
     import CourseCardStyles from "./CourseCard.module.css"
-    const CourseCard = () => {
-      return <Link href="/course">
+    const CourseCard = (props) => {
+      return <Link href={`/course?id=${props.courseData.id}`}>
           <div className={CourseCardStyles.card}>
                <div className={CourseCardStyles.cardImg}>
+               <Image src={props.courseData.image} layout="fill"/>
+
 
             </div>
             <div className={CourseCardStyles.cardDetails}>
-              <h5 className={CourseCardStyles.cardTitle}>Complete NodeJS Developer Course</h5>
-              <p className={CourseCardStyles.cardDesc}>Description for the course right here</p>
-              <div className={CourseCardStyles.cardRating}>5 stars</div>
-              <div className={CourseCardStyles.cardPrice}>0.036 ETH</div>
+              <h5 className={CourseCardStyles.cardTitle}>{props.courseData.title}</h5>
+              <p className={CourseCardStyles.cardDesc}>{props.courseData.desc}</p>
+              <div className={CourseCardStyles.cardRating}>{props.courseData.rating} stars</div>
+              <div className={CourseCardStyles.cardPrice}>{props.courseData.price} ETH</div>
             </div>
           </div>
          </Link>

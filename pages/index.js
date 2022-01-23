@@ -3,16 +3,48 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Header from '../components/Header'
 import Showcase from '../components/Showcase'
-
+import ThirdWebService from "../services/thirdWeb"
 // import Link from 'next/link'
 import { useState, useEffect } from "react"
    
   
 
 export default function Home() {
-
   
- 
+
+  let fakeAllCourses = [{
+    image: "hi",
+    title: "hey",
+    desc: "Waddup",
+    rating: 5,
+    price: 0.477
+  },
+  {
+    image: "hi",
+    title: "hey",
+    desc: "Waddup",
+    rating: 5,
+    price: 0.477
+  }
+  ]
+  const [allCourses, setAllCourses] = useState([])
+   useEffect(
+      async () => {
+        let listings = await ThirdWebService.getAllListings()
+        let courses = listings.map(listing => {
+          return {
+            id: listing.asset.id,
+            title: listing.asset.name,
+            desc: listing.asset.description,
+            image: listing.asset.image,
+            rating: 5,
+            price: listing.buyoutPrice._hex
+          }
+        })
+      setAllCourses(courses)
+      console.log(listings)
+      }
+    ,[])
   return (
 
       <main className={styles.main}>
@@ -43,7 +75,8 @@ export default function Home() {
 
       <section className="showcase">
         <h3>Showcase Title</h3>
-        <Showcase/>
+
+        <Showcase data={allCourses}/>
       </section>
       <footer className={styles.footer}>
       @2022 Copyright Reserved

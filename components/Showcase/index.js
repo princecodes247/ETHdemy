@@ -1,9 +1,10 @@
 import CourseCard from "../CourseCard"
 import ShowcaseStyles from "./Showcase.module.css"
-    const Showcase = () => {
+    const Showcase = (props) => {
       return <div className={ShowcaseStyles.showcase_set}>
-          <CourseCard/>
-          <CourseCard/>
+          {props.data.map(course => {
+          	return <CourseCard courseData={course}/>
+          })}
         </div>
       
     };

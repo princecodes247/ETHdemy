@@ -1,17 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../../styles/Home.module.css'
 import Header from '../../components/Header'
-
+import ThirdWebService from "../../services/thirdWeb"
 
 // import Link from 'next/link'
 import { useState, useEffect } from "react"
    
-  
+export default function AddCourse() {
 
-export default function Wishlist() {
-
-  
+  // useEffect(()=> {
+  //   ThirdWebService.createCourseListing()
+  // }, [])
  
   return (
 
@@ -26,7 +26,11 @@ export default function Wishlist() {
           />
         </Head>
         <Header/>
-     
+        <section>
+          <form action="">
+            <input type="text" />
+          </form>
+        </section>
       </main>
 
    

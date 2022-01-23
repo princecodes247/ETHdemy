@@ -1,7 +1,10 @@
 
     .showcase_set {
-      display: flex;
-      grid-gap: 30px;
+      grid-gap: 2em;
+			display: grid;
+			align-items: start;
+			justify-content: start;
+			/*grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));*/
     }
     
     

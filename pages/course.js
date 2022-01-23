@@ -3,17 +3,32 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import CourseStyles from '../styles/Course.module.css'
 import Header from '../components/Header'
-
 // import Showcase from '../components/Showcase'
-
 import Link from 'next/link'
 import { useState, useEffect } from "react"
-   
+import ThirdWebService from "../services/thirdWeb"
+import { useRouter } from 'next/router'
+
   
 
 export default function Course() {
-
-  
+  const [courseDetails, setCourseDetails] = useState({})
+  const router = useRouter()
+  const { id } = router.query
+  useEffect(async () => {
+    let listing = await ThirdWebService.getListing(id)
+    console.log(listing)
+    let course = {
+            id: listing.asset.id,
+            title: listing.asset.name,
+            desc: listing.asset.description,
+            image: listing.asset.image,
+            rating: 5,
+            price: listing.buyoutPrice._hex
+          }
+        
+    setCourseDetails(course)
+  },[])
  
   return (
 
@@ -33,22 +48,22 @@ export default function Course() {
 
         </div>
          <div className={CourseStyles.cardDetails}>
-              <h2 className={CourseStyles.cardTitle}>Complete NodeJS Developer Course</h2>
-              <p className={CourseStyles.cardDesc}>Description for the course right here</p>
-              <div className={CourseStyles.cardRating}>5 stars</div>
+              <h2 className={CourseStyles.cardTitle}>{courseDetails.title}</h2>
+              <p className={CourseStyles.cardDesc}>{courseDetails.desc}</p>
+              <div className={CourseStyles.cardRating}>{courseDetails.rating} stars</div>
               <ul className={CourseStyles.meta_data}>
                 <li>Last Updated</li>
                 <li>Language</li> 
                 <li>Captions</li>
               </ul>
-              <div className={CourseStyles.cardPrice}>0.036 ETH</div>
+              <div className={CourseStyles.cardPrice}>{courseDetails.price} ETH</div>
             </div>
             <div className="button_set">
-              <Link href="/user/cart">
+              <Link href={`/user/cart/add?id=${courseDetails.id}`}>
               <button className="btn">Add To Cart</button>
             </Link>
             <Link href="/user/wishlist">
-              <button className="btn">Add To Cart</button>
+              <button className="btn">Add To Wishlist</button>
             </Link>
             </div>
       </section>
