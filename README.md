@@ -6,6 +6,8 @@ ETHdemy is an online learning and teaching marketplace on the blockchain with ov
 - [] Be able to connect wallet
 - [] Be able to play videos
 - [x] Be able to list courses
+- [] Be able to buy courses
+- [] Be able to delete courses
 - [x] Be able to add courses
 - - [] FIX: Buying from one wallet
 - [x] Be able to buy courses
