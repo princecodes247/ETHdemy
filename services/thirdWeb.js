@@ -86,11 +86,19 @@ const getListing = async (id) => {
     .catch((error) => console.error(error));
     return temp
 };
+const deleteListing = async (id) => {
+
+  const listingId = "0"
+
+  await module.cancelDirectListing(listingId);
+    return 0
+};
 
 const ThirdWebService = {
   getAllListings,
   getListing,
-  createCourseListing
+  createCourseListing,
+  deleteListing
 }
 
 export default ThirdWebService;

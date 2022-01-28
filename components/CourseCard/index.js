@@ -5,7 +5,7 @@ import Image from 'next/image'
       return <Link href={`/course?id=${props.courseData.id}`}>
           <div className={CourseCardStyles.card}>
                <div className={CourseCardStyles.cardImg}>
-               <Image src={props.courseData.image} layout="fill"/>
+               
 
 
             </div>
